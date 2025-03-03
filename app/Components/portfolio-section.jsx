@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Heading from "./heading";
 
 export default function PortfolioSection() {
   const portfolioItems = [
@@ -27,7 +28,10 @@ export default function PortfolioSection() {
 
   return (
     <section className="py-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-12">Portfolio</h2>
+      <Heading
+        title="Portfolio"
+        subtitle="A showcase of my best projects and work."
+      />
 
       <div className="flex flex-col gap-8">
         {portfolioItems.map((item) => (

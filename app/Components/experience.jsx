@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Heading from "./heading";
 
 export default function Experience() {
   useEffect(() => {
@@ -46,23 +47,10 @@ export default function Experience() {
   return (
     <div className="w-full py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="flex justify-center mb-8">
-          <span
-            className="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold"
-            data-aos="fade-up"
-          >
-            Experience
-          </span>
-        </div>
-
-        <p
-          className="text-center mb-12 text-gray-600"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          Here is a quick summary of my professional journey:
-        </p>
-
+        <Heading
+          title="Work Experience"
+          subtitle="A brief history of my professional journey."
+        />
         <div className="space-y-8">
           {experiences.map((experience, index) => (
             <div
