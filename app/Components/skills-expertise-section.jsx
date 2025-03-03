@@ -17,6 +17,7 @@ import {
   FlaskConical,
   GitBranch,
 } from "lucide-react";
+import Heading from "./heading";
 
 export default function SkillsExpertise() {
   useEffect(() => {
@@ -47,18 +48,10 @@ export default function SkillsExpertise() {
       <div className="border-t border-dashed border-gray-300 mb-12"></div>
 
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-center text-3xl mb-4" data-aos="fade-up">
-          <span className="font-normal">Skills &</span>{" "}
-          <span className="font-bold">Expertise</span>
-        </h2>
-
-        <p
-          className="text-center mb-12"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          The skills, tools, and technologies I am really good at:
-        </p>
+        <Heading
+          title="Skills&nbsp;& Expertise"
+          subtitle="The skills, tools, and technologies I am really good at:"
+        />
 
         <div className="grid grid-cols-4 md:grid-cols-8 gap-8">
           {skills.map((skill, index) => (
