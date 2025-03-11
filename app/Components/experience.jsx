@@ -1,28 +1,95 @@
 "use client";
-import Heading from "./heading";
 
-const ExperienceCard = ({ company, date, role, description }) => (
-  <div className="relative p-6 rounded-xl border border-opacity-10 border-white bg-opacity-10 backdrop-blur-sm">
-    <div className="flex items-center gap-4 mb-4">
-      <div className="w-10 h-10 flex items-center justify-center">
-        <img
-          src={`/icons/${company.toLowerCase()}.svg`}
-          alt={`${company} logo`}
-          className="w-8 h-8"
-        />
-      </div>
-      <div className="flex flex-col">
-        <h3 className="text-xl font-semibold text-white">{role}</h3>
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-300">{company}</span>
-          <span className="text-sm text-gray-400">•</span>
-          <span className="text-sm text-gray-300">{date}</span>
+import { Search, Youtube, Apple } from "lucide-react";
+
+const ExperienceCard = ({ company, date, role, description, index }) => {
+  const getIcon = (company) => {
+    switch (company.toLowerCase()) {
+      case "google":
+        return (
+          <Search
+            className={`w-8 h-8 ${index === 1 ? "text-black" : "text-white"}`}
+          />
+        );
+      case "youtube":
+        return (
+          <Youtube
+            className={`w-8 h-8 ${index === 1 ? "text-black" : "text-white"}`}
+          />
+        );
+      case "apple":
+        return (
+          <Apple
+            className={`w-8 h-8 ${index === 1 ? "text-black" : "text-white"}`}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div
+      className={`relative p-6 rounded-xl border border-opacity-10 border-gray-500 ${
+        index === 1 ? "bg-white" : "bg-opacity-10 backdrop-blur-sm"
+      }`}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 flex items-center justify-center">
+            {getIcon(company)}
+          </div>
+          <div className="flex flex-col">
+            <h3
+              className={`text-xl font-semibold ${
+                index === 1 ? "text-black" : "text-white"
+              }`}
+            >
+              {role}
+            </h3>
+            <div className="flex items-center gap-2">
+              <span
+                className={`text-sm ${
+                  index === 1 ? "text-gray-700" : "text-gray-300"
+                }`}
+              >
+                {company}
+              </span>
+              <span
+                className={`text-sm ${
+                  index === 1 ? "text-gray-600" : "text-gray-400"
+                }`}
+              >
+                •
+              </span>
+              <span
+                className={`text-sm ${
+                  index === 1 ? "text-gray-700" : "text-gray-300"
+                }`}
+              >
+                {date}
+              </span>
+            </div>
+          </div>
         </div>
+        <span
+          className={`text-sm ${
+            index === 1 ? "text-gray-700" : "text-gray-300"
+          }`}
+        >
+          {index === 0 ? "2021-Present" : index === 1 ? "2017-19" : ""}
+        </span>
       </div>
+      <p
+        className={`text-sm leading-relaxed ${
+          index === 1 ? "text-gray-700" : "text-gray-300"
+        }`}
+      >
+        {description}
+      </p>
     </div>
-    <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
-  </div>
-);
+  );
+};
 
 export default function ExperienceSection() {
   const experiences = [
@@ -57,7 +124,7 @@ export default function ExperienceSection() {
         </div>
         <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <ExperienceCard key={index} {...exp} />
+            <ExperienceCard key={index} {...exp} index={index} />
           ))}
         </div>
       </div>

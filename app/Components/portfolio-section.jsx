@@ -1,102 +1,101 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import Heading from "./heading";
 
 export default function PortfolioSection() {
   const portfolioItems = [
     {
-      id: 1,
-      title: "Re-Design For WEb designer Portfolio",
+      id: "01",
+      title: "Crypto Screener Application",
       description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      tags: ["User Research", "UX Design"],
-      image: "/placeholder.svg?height=600&width=400",
-      backgroundColor: "bg-sky-50",
+        "I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.",
+      image:
+        "https://images.unsplash.com/photo-1621761191319-c6fb62004040?q=80&w=1000",
+      backgroundColor: "bg-[#1a237e]",
     },
     {
-      id: 2,
-      title: "Re-Design For WEb designer Portfolio",
+      id: "02",
+      title: "Euphoria - Ecommerce (Apparels) Website Template",
       description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      tags: ["User Research", "UX Design"],
-      image: "/placeholder.svg?height=600&width=400",
-      backgroundColor: "bg-purple-50",
+        "I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book. when an unknown printer took a galley of type and scrambled it to specimen book.",
+      image:
+        "https://images.unsplash.com/photo-1525328437458-0c4d4db7cab4?q=80&w=1000",
+      backgroundColor: "bg-[#1a237e]",
+    },
+    {
+      id: "03",
+      title: "Design Blog Website",
+      description:
+        "I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.",
+      image:
+        "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000",
+      backgroundColor: "bg-[#1a237e]",
     },
   ];
 
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-      <Heading
-        title="Portfolio"
-        subtitle="A showcase of my best projects and work."
-      />
-
-      <div className="flex flex-col gap-8">
-        {portfolioItems.map((item) => (
-          <div
-            key={item.id}
-            className={`${item.backgroundColor} rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10`}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
-                  {item.title}
-                </h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag, index) => (
-                    <Badge
-                      key={index}
-                      variant="outline"
-                      className="bg-white text-slate-700 hover:bg-white"
+    <section className="py-16 px-4 md:px-6 lg:px-8 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-12">
+          My <span className="text-[#1a237e]">Projects</span>
+        </h2>
+        <div className="flex flex-col gap-16">
+          {portfolioItems.map((item) => (
+            <div key={item.id} className="group">
+              {item.id === "01" ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <h3 className="text-4xl font-bold">{item.id}</h3>
+                      <h4 className="text-2xl font-semibold">{item.title}</h4>
+                    </div>
+                    <p className="text-gray-600">{item.description}</p>
+                    <Button
+                      variant="ghost"
+                      className="p-0 hover:bg-transparent"
                     >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-
-                <p className="text-slate-700">{item.description}</p>
-
-                <Button
-                  variant="default"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full"
-                >
-                  Read Case Study
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-
-              <div className="relative">
-                <div className="relative rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt="Portfolio preview"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-
-                  <div className="absolute bottom-4 right-4 flex gap-2">
-                    <div className="bg-white rounded-full p-2 shadow-md">
-                      <span className="text-indigo-600 font-bold">W</span>
-                    </div>
-                    <div className="bg-black rounded-full p-2 shadow-md">
-                      <span className="text-white font-bold">F</span>
-                    </div>
-                    <div className="bg-orange-500 rounded-full p-2 shadow-md">
-                      <span className="text-white font-bold">D</span>
-                    </div>
-                    <div className="bg-blue-500 rounded-full p-2 shadow-md">
-                      <span className="text-white font-bold">L</span>
-                    </div>
+                      <ArrowRight className="h-6 w-6 text-[#1a237e] transform group-hover:translate-x-1 transition-transform" />
+                    </Button>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4 order-2 md:order-1">
+                    <div className="flex items-center gap-4">
+                      <h3 className="text-4xl font-bold">{item.id}</h3>
+                      <h4 className="text-2xl font-semibold">{item.title}</h4>
+                    </div>
+                    <p className="text-gray-600">{item.description}</p>
+                    <Button
+                      variant="ghost"
+                      className="p-0 hover:bg-transparent"
+                    >
+                      <ArrowRight className="h-6 w-6 text-[#1a237e] transform group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                  <div className="relative overflow-hidden rounded-lg order-1 md:order-2">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

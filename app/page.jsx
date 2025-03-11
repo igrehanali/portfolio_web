@@ -26,6 +26,9 @@ export default function Home() {
       <div id="contact">
         <EducationSection />
       </div>
+      <div>
+        <PortfolioSection/>
+      </div>
     </main>
   );
 }
