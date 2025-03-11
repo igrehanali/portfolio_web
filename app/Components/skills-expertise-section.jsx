@@ -1,9 +1,4 @@
 "use client";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-import Heading from "./heading";
 import {
   SiJavascript,
   SiTypescript,
@@ -18,6 +13,7 @@ import {
   SiGit,
   SiRedux,
 } from "react-icons/si";
+import Heading from "./heading";
 
 const skills = [
   {
@@ -49,21 +45,10 @@ const skills = [
   },
   { name: "Figma", icon: <SiFigma size={32} className="text-purple-500" /> },
   { name: "Git", icon: <SiGit size={32} className="text-orange-500" /> },
-  { name: "Redux", icon: <SiRedux size={32} className="text-purple-600" /> }, // Added one skill to make it even
+  { name: "Redux", icon: <SiRedux size={32} className="text-purple-600" /> },
 ];
 
 export default function SkillsExpertise() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200, // Smoother and slightly slower animations
-      easing: "ease-in-out", // Smooth in and out
-      offset: 100, // Start animation when the element is closer to view
-      delay: 50, // Small delay to make transitions smoother
-      once: false, // Keep animations when scrolling up/down
-      mirror: true, // Re-trigger animations on scroll up
-    });
-  }, []);
-
   return (
     <div className="w-full py-16 bg-white px-4 mx-auto max-w-6xl">
       <Heading
@@ -75,9 +60,8 @@ export default function SkillsExpertise() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center transition-transform duration-300 hover:shadow-lg p-4 rounded-lg"
-            data-aos="fade-up"
-            data-aos-delay={100 * index}
+            className="flex flex-col items-center transition-transform duration-300 hover:shadow-lg p-4 rounded-lg animate-fade-in"
+            style={{ animationDelay: `${index * 50}ms` }}
           >
             <div className="w-12 h-12 mb-2 flex items-center justify-center">
               {skill.icon}

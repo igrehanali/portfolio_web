@@ -3,66 +3,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Github, Mail } from "lucide-react";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function HeroSection() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-out-cubic",
-    });
-  }, []);
-
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/40">
-      {/* Dotted border */}
-      <div className="absolute left-1/2 top-0 h-full w-px border-l border-dashed border-gray-200" />
-      <div className="absolute bottom-0 left-0 w-full h-px border-t border-dashed border-gray-200" />
-
-      {/* Floating elements */}
-      <div className="absolute top-[15%] right-[28%] h-10 w-10 rounded-lg bg-purple-600 shadow-lg transform rotate-45 animate-float-slow" />
-      <div className="absolute top-[35%] right-[18%] h-3 w-3 rounded-full bg-purple-500 animate-float" />
-      <div className="absolute bottom-[30%] right-[25%] h-8 w-8 rounded-lg bg-cyan-400 shadow-md transform rotate-12 animate-float-medium" />
-      <div className="absolute top-[65%] right-[22%] h-4 w-4 rounded-full bg-blue-400 animate-float-slow" />
-      <div className="absolute bottom-[15%] right-[35%] h-2 w-2 rounded-full bg-purple-400 animate-float" />
-
-      <div className="container mx-auto h-screen flex items-center">
+    <div className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/40 lg:pt-16 md:pt-20 pt-40 mx-auto">
+      <div className="container mx-auto h-screen flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left content */}
-          <div className="px-6 md:px-10 z-10" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl ">
-              HEY!
-              <span className="text-[#242A41] font-semibold"> I'm Rehan</span>,
+          <div className="px-6 md:px-10 z-10 animate-fade-in">
+            <h1 className="text-[32px] md:text-[48px] leading-tight mb-1 font-normal">
+              Hello I'
+              <span className="text-[#242A41] font-semibold">Rehan Ali</span>.
             </h1>
-            <h2 className="text-4xl md:text-5xl mb-6  text-[#242A41]">
-              Web Developer
+            <h2 className="text-[32px] md:text-[48px] leading-tight mb-1 font-normal">
+              Web
+              <span className="bg-white px-2 font-normal">Developer</span>
             </h2>
-            <p className="text-gray-600 mb-10 max-w-md text-sm md:text-base">
-              I craft high-performance, scalable web solutions using modern
-              technologies. Passionate about turning ideas into interactive and
-              seamless digital products.
-            </p>
 
-            {/* Social icons */}
-            <div className="flex space-x-4">
+            <p className="text-gray-600 mb-12 max-w-[460px] text-sm md:text-base leading-relaxed">
+              I'm Evren Shah Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown printer
+              took a galley of type and scrambled it to specimen book.
+            </p>
+            <div className="flex space-x-6">
               {[
-                {
-                  icon: <Linkedin className="w-5 h-5" />,
-                  href: "#",
-                  delay: 100,
-                },
-                { icon: <Github className="w-5 h-5" />, href: "#", delay: 200 },
-                { icon: <Mail className="w-5 h-5" />, href: "#", delay: 300 },
+                { icon: <Linkedin className="w-5 h-5" />, href: "#" },
+                { icon: <Github className="w-5 h-5" />, href: "#" },
+                { icon: <Mail className="w-5 h-5" />, href: "#" },
               ].map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
-                  data-aos="fade-up"
-                  data-aos-delay={social.delay}
-                  className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:bg-purple-600 hover:border-purple-600 hover:scale-110 hover:shadow-lg transform transition-all duration-300 ease-out"
+                  className="w-[52px] h-[52px] rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:bg-purple-600 hover:border-purple-600 hover:scale-110 hover:shadow-lg transform transition-all duration-300 ease-out animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {social.icon}
                 </Link>
@@ -70,22 +43,14 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right content - Image with glow effect */}
-          <div
-            className="relative flex justify-center items-center z-10"
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
-            {/* Glowing circle background */}
-            <div className="absolute w-[500px] h-[500px] bg-purple-100/80 rounded-full shadow-[0_0_120px_rgba(168,85,247,0.15)] transform -translate-x-6" />
-
-            {/* Person image */}
+          <div className="relative flex justify-center items-center z-10 animate-slide-in">
+            <div className="absolute w-[520px] h-[520px] bg-purple-100/80 rounded-full shadow-[0_0_120px_rgba(168,85,247,0.15)] transform -translate-x-6" />
             <div className="relative z-10">
               <Image
                 src="/hero.jpg"
-                width={400}
-                height={300}
-                alt="Laura - UI/UX Designer"
+                width={420}
+                height={320}
+                alt="Profile picture"
                 className="object-cover"
                 priority
               />
@@ -93,9 +58,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Bottom right decorative dot */}
-      <div className="absolute bottom-6 right-6 h-3 w-3 rounded-full bg-red-400" />
     </div>
   );
 }
