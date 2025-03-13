@@ -28,11 +28,13 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 bg-white">
+    <section className="py-16 px-4 md:px-6 lg:px-8 bg-[#242F65]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          My <span className="text-[#1a237e]">Projects</span>
-        </h2>
+        <div className="mb-16 text-center font-light">
+          <h2 className="text-4xl text-white font-light mb-12">
+            My <span className="text-white font-bold">Projects</span>
+          </h2>
+        </div>
         <div className="flex flex-col gap-16">
           {portfolioItems.map((item, index) => (
             <div
@@ -55,18 +57,22 @@ export default function PortfolioSection() {
                   />
                 </div>
                 <div className="space-y-4 md:order-1">
-                  <div className="flex items-center gap-4">
-                    <h3 className="text-4xl font-bold text-[#1a237e]">
+                  <div className="flex flex-col items-start gap-4">
+                    <h3 className="text-4xl font-bold text-white group-hover:text-[#1a237e] ">
                       {item.id}
                     </h3>
-                    <h4 className="text-2xl font-semibold">{item.title}</h4>
+                    <h4 className="text-2xl font-semibold text-white group-hover:text-black">
+                      {item.title}
+                    </h4>
                   </div>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-white  group-hover:text-black">
+                    {item.description}
+                  </p>
                   <Button
                     variant="ghost"
                     className="p-0 hover:bg-transparent group-hover:text-[#1a237e] transition-colors"
                   >
-                    <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform text-[#1a237e]" />
+                    <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform text-white group-hover:text-[#1a237e]" />
                   </Button>
                 </div>
               </div>

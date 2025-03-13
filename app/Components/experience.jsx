@@ -119,8 +119,10 @@ export default function ExperienceSection() {
   return (
     <section className="w-full bg-[#1e2b5e] py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl font-bold text-white mb-2">My Experience</h2>
+        <div className="mb-16 text-center font-light">
+          <h2 className="text-4xl text-white font-light mb-12">
+            My <span className="text-white font-bold">Experience</span>
+          </h2>
         </div>
         <div className="space-y-6">
           {experiences.map((exp, index) => (

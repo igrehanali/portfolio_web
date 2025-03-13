@@ -1,8 +1,8 @@
 export default function AboutMeSection() {
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 bg-white">
+    <section className="py-16 px-4 md:px-6 lg:px-4 bg-white max-w-6xl  mx-auto w-full ">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-start">
           {/* Left Column - Illustration */}
           <div className="flex justify-center">
             <img
@@ -14,8 +14,8 @@ export default function AboutMeSection() {
 
           {/* Right Column - Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-[#1a237e]">
-              About <span className="text-black">Me</span>
+            <h2 className="text-4xl text-black font-light mb-12">
+              About <span className="text-[#1a237e] font-bold">Me</span>
             </h2>
 
             <p className="text-gray-600 leading-relaxed">

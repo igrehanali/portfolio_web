@@ -6,8 +6,8 @@ import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden lg:pt-16 md:pt-20 pt-40 mx-auto">
-      <div className="container mx-auto h-screen flex items-center justify-center">
+    <div className="relative w-full min-h-screen overflow-hidden lg:pt-16 md:pt-20 pt-40 mx-auto max-w-6xl ">
+      <div className="container mx-auto h-screen flex items-center justify-items-stretch">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="px-6 md:px-10 z-10 animate-fade-in">
             <h1 className="text-[32px] md:text-[48px] leading-tight mb-1 font-normal">
@@ -34,7 +34,7 @@ export default function HeroSection() {
                 <Link
                   key={index}
                   href={social.href}
-                  className="w-[52px] h-[52px] rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:bg-purple-600 hover:border-purple-600 hover:scale-110 hover:shadow-lg transform transition-all duration-300 ease-out animate-fade-in"
+                  className="w-[52px] h-[52px] rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#1a237e] hover:border-[#1a237e]hover:scale-110 hover:shadow-lg transform transition-all duration-300 ease-out animate-fade-in"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {social.icon}
@@ -43,7 +43,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative flex justify-center items-center z-10 animate-slide-in">
+          <div className="relative flex justify-end items-end z-10 animate-slide-in">
             <div className="absolute w-[520px] h-[520px]  transform -translate-x-6" />
             <div className="relative z-10">
               <Image

@@ -17,11 +17,11 @@ export default function Home() {
       <div id="skills">
         <SkillsExpertise />
       </div>
+      <Experience />
       <div id="about">
         <AboutMe />
       </div>
 
-      <Experience />
       <div id="projects">
         <PortfolioSection />
       </div>
