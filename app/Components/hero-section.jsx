@@ -6,7 +6,7 @@ import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/40 lg:pt-16 md:pt-20 pt-40 mx-auto">
+    <div className="relative w-full min-h-screen overflow-hidden lg:pt-16 md:pt-20 pt-40 mx-auto">
       <div className="container mx-auto h-screen flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="px-6 md:px-10 z-10 animate-fade-in">
@@ -44,7 +44,7 @@ export default function HeroSection() {
           </div>
 
           <div className="relative flex justify-center items-center z-10 animate-slide-in">
-            <div className="absolute w-[520px] h-[520px] bg-purple-100/80 rounded-full shadow-[0_0_120px_rgba(168,85,247,0.15)] transform -translate-x-6" />
+            <div className="absolute w-[520px] h-[520px]  transform -translate-x-6" />
             <div className="relative z-10">
               <Image
                 src="/hero.jpg"

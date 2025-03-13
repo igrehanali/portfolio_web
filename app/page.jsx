@@ -13,21 +13,22 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <div id="about">
-        <AboutMe />
-      </div>
       <div id="skills">
         <SkillsExpertise />
       </div>
+      <div id="about">
+        <AboutMe />
+      </div>
+
       <Experience />
       <div id="projects">
         <PortfolioSection />
       </div>
-      <div id="contact">
+      {/* <div id="contact">
         <EducationSection />
-      </div>
+      </div> */}
       <div>
-        <PortfolioSection/>
+        <PortfolioSection />
       </div>
     </main>
   );
