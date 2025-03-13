@@ -1,6 +1,7 @@
 "use client";
 
 import AboutMe from "./Components/about-me";
+import ContactSection from "./Components/contact-section";
 import EducationSection from "./Components/education";
 import Experience from "./Components/experience";
 import HeroSection from "./Components/hero-section";
@@ -24,11 +25,8 @@ export default function Home() {
       <div id="projects">
         <PortfolioSection />
       </div>
-      {/* <div id="contact">
-        <EducationSection />
-      </div> */}
-      <div>
-        <PortfolioSection />
+      <div id="contact">
+        <ContactSection />
       </div>
     </main>
   );
