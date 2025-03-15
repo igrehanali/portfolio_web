@@ -32,7 +32,7 @@ export default function Skills() {
           className="text-3xl sm:text-4xl font-medium text-center mb-12 text-slate-800"
           data-aos="fade-up"
         >
-          My <span className="text-slate-700">Skills</span>
+          My <span className="text-slate-700">Skillss</span>
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
           {skills.map((skill, index) => (

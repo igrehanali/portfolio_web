@@ -60,23 +60,23 @@ const SkillsExpertise = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center transition-transform duration-300 border border-[#242F65] hover:bg-[#242F65] p-4 animate-fade-in group"
+            className="flex flex-col items-center transition-all duration-500 ease-in-out transform hover:scale-105 border border-[#242F65] hover:bg-[#242F65] hover:shadow-lg p-4 animate-fade-in group rounded-md"
             style={{ animationDelay: `${index * 50}ms` }}
           >
             {/* Icon */}
-            <div className="w-[5rem] h-[5rem] mb-2 flex items-center justify-center group-hover:text-white transition-colors duration-300">
+            <div className="w-[5rem] h-[5rem] mb-2 flex items-center justify-center group-hover:text-white transition-all duration-500 ease-in-out">
               {React.cloneElement(skill.icon, {
                 className:
-                  "group-hover:text-white transition-colors duration-300",
+                  "group-hover:text-white transition-all duration-500 ease-in-out",
               })}
             </div>
 
             {/* Text */}
-            <span className="text-xs font-medium text-center group-hover:text-white transition-colors duration-300">
+            <span className="text-xs font-medium text-center group-hover:text-white transition-all duration-500 ease-in-out">
               {skill.name}
             </span>
           </div>
