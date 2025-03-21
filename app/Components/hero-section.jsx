@@ -61,31 +61,20 @@
 //     </div>
 //   );
 // }
+
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Github, Mail } from "lucide-react";
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function HeroSection() {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      AOS.init({
-        duration: 1500,
-        easing: "ease-out-cubic",
-        delay: 200,
-      });
-    }
-  }, []);
-
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center px-6 sm:px-10 lg:px-16 bg-gray-100 md:pt-20 pt-28">
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left Content */}
-        <div data-aos="fade-up" className="text-center lg:text-left">
+        <div className="text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Building Scalable & Interactive Web Experiences.
           </h1>
@@ -114,8 +103,6 @@ export default function HeroSection() {
               <Link
                 key={index}
                 href={social.href}
-                data-aos="fade-up"
-                data-aos-delay={social.delay}
                 className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center 
                            text-gray-700 hover:text-white hover:bg-gray-800 hover:border-gray-800 
                            hover:scale-110 transition-all duration-300 ease-out"
@@ -127,10 +114,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right Content - Image */}
-        <div
-          className="relative flex justify-center items-center"
-          data-aos="fade-left"
-        >
+        <div className="relative flex justify-center items-center">
           <div className="relative">
             <Image
               src="/hero.jpg"
