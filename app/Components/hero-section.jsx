@@ -71,7 +71,7 @@ import { useEffect } from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-6 sm:px-10 lg:px-16 bg-gray-100 md:pt-20 pt-28">
+    <section className="relative w-full h-screen flex items-center justify-center px-6 sm:px-10 lg:px-16 bg-gray-100 md:pt-20 pt-28">
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left Content */}
         <div className="text-center lg:text-left">

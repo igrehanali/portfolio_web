@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { FaFacebook, FaReddit, FaDiscord } from "react-icons/fa";
 
 export default function ContactSection() {
@@ -45,9 +44,9 @@ export default function ContactSection() {
               ></textarea>
             </div>
             <div className="flex items-center justify-start space-x-4">
-              <Button className="bg-[#1a237e] hover:bg-[#1a237e]/90 text-white px-8 py-5 transition-all transform hover:scale-105">
+              <button className="bg-[#1a237e] hover:bg-[#1a237e]/90 text-white px-8 py-5 transition-all transform hover:scale-105">
                 Get In Touch
-              </Button>
+              </button>
               <div>
                 <div className="flex space-x-4">
                   <a
