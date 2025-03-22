@@ -48,7 +48,9 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
-
+      <div id="skills">
+        <SkillsExpertise />
+      </div>
       <Experience />
       <div id="about">
         <AboutMe />
@@ -57,9 +59,7 @@ export default function Home() {
       <div id="projects">
         <PortfolioSection />
       </div>
-      <div id="skills">
-        <SkillsExpertise />
-      </div>
+
       <div id="contact">
         <ContactSection />
       </div>
