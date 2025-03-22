@@ -13,11 +13,6 @@ export default function PortfolioSection() {
       easing: "ease-out-cubic",
     });
   }, []);
-<<<<<<< Updated upstream
-=======
-  // sdvc
-
->>>>>>> Stashed changes
   const portfolioItems = [
     {
       id: "01",
@@ -43,7 +38,10 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 bg-[#242F65] transition-all duration-700" data-aos="fade-up">
+    <section
+      className="py-16 px-4 md:px-6 lg:px-8 bg-[#242F65] transition-all duration-700"
+      data-aos="fade-up"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center font-light" data-aos="fade-down">
           <h2 className="text-4xl text-white font-light mb-12 transition-all duration-500 hover:scale-105">
@@ -54,8 +52,8 @@ export default function PortfolioSection() {
           {portfolioItems.map((item, index) => (
             <div
               key={item.id}
-              className="group transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-gray-100/90 hover:to-gray-50/90 p-6 rounded-lg transform hover:-translate-y-1 hover:shadow-xl" 
-              data-aos="fade-up" 
+              className="group transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-gray-100/90 hover:to-gray-50/90 p-6 rounded-lg transform hover:-translate-y-1 hover:shadow-xl"
+              data-aos="fade-up"
               data-aos-delay={index * 100}
               data-aos-easing="ease-out-cubic"
             >
