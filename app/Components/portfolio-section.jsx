@@ -13,6 +13,11 @@ export default function PortfolioSection() {
       easing: "ease-out-cubic",
     });
   }, []);
+<<<<<<< Updated upstream
+=======
+  // sdvc
+
+>>>>>>> Stashed changes
   const portfolioItems = [
     {
       id: "01",
