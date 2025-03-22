@@ -46,16 +46,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${isSticky ? "sticky shadow-lg" : "fixed"} top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300`}
+      className={`${
+        isSticky ? "sticky shadow-lg" : "fixed"
+      } top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link
               href="/"
-              className="text-black font-bold text-xl hover:text-gray-600 transition-colors duration-300"
+              className="text-black font-bold text-xl hover:text-[#1a237e] transition-colors duration-300"
             >
-              Personal
+              Rehan 👨🏻‍💻
             </Link>
           </div>
           <div className="hidden md:block">
@@ -105,11 +107,15 @@ export default function Navbar() {
       </div>
       {/* Mobile menu drawer */}
       <div
-        className={`fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 h-screen ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 h-screen ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         onClick={() => setIsOpen(false)}
       >
         <div
-          className={`fixed inset-y-0 left-0 w-72 bg-white shadow-lg transform transition-all duration-300 ease-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+          className={`fixed inset-y-0 left-0 w-72 bg-white shadow-lg transform transition-all duration-300 ease-out ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="p-6 space-y-8">

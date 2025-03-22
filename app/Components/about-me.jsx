@@ -19,21 +19,20 @@ export default function AboutMeSection() {
             </h2>
 
             <p className="text-gray-600 leading-relaxed">
-              I'm a passionate, self-proclaimed designer who specializes in full
-              stack development (React.js & Node.js). I am very enthusiastic
-              about bringing the technical and visual aspects of digital
-              products to life. User experience, pixel perfect design, and
-              writing clear, readable, highly performant code matters to me.
+              I’m a passionate frontend developer specializing in React.js and
+              Next.js,. I love turning ideas into interactive, high-performance
+              digital experiences. From crafting pixel-perfect UI designs to
+              ensuring smooth user interactions, I focus on delivering clean,
+              maintainable, and efficient code.
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-              I began my journey as a web developer in 2015, and since then,
-              I've continued to grow and evolve as a developer, taking on new
-              challenges and learning the latest technologies along the way.
-              Now, in my early thirties, 7 years after starting my web
-              development journey, I'm building cutting-edge web applications
-              using modern technologies such as Next.js, TypeScript, Nestjs,
-              Tailwindcss, Supabase and much more.
+              I started my web development journey a few years ago and have been
+              continuously learning and evolving ever since. Over time, I’ve
+              worked on scalable web applications, admin panels, and SaaS
+              platforms, using modern technologies like TypeScript, Tailwind
+              CSS, Firebase, and Supabase. My goal is to build fast, accessible,
+              and user-friendly applications that make an impact.
             </p>
 
             <div className="pt-4">
@@ -41,7 +40,9 @@ export default function AboutMeSection() {
               <p className="text-gray-600">
                 Bachelor's Degree in Computer Science
               </p>
-              <p className="text-gray-600">GC University Faisalabad</p>
+              <p className="text-gray-600">
+                <strong>IUB</strong> Islamia University of Bahawalpur
+              </p>
             </div>
           </div>
         </div>

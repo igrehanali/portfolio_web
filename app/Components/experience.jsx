@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Youtube, Apple } from "lucide-react";
+import { Search, Youtube, Apple, Briefcase } from "lucide-react";
 
 const ExperienceCard = ({ company, date, role, description, index }) => {
   const getIcon = (company) => {
@@ -8,41 +8,53 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
       case "google":
         return (
           <Search
-            className={`w-8 h-8 ${index === 1 ? "text-black" : "text-white"}`}
+            className={`w-8 h-8 ${
+              index === 1 || index === 3 ? "text-black" : "text-white"
+            }`}
           />
         );
       case "youtube":
         return (
           <Youtube
-            className={`w-8 h-8 ${index === 1 ? "text-black" : "text-white"}`}
+            className={`w-8 h-8 ${
+              index === 1 || index === 3 ? "text-black" : "text-white"
+            }`}
           />
         );
       case "apple":
         return (
           <Apple
-            className={`w-8 h-8 ${index === 1 ? "text-black" : "text-white"}`}
+            className={`w-8 h-8 ${
+              index === 1 || index === 3 ? "text-black" : "text-white"
+            }`}
           />
         );
       default:
-        return null;
+        return (
+          <Briefcase
+            className={`w-8 h-8 ${
+              index === 1 || index === 3 ? "text-black" : "text-white"
+            }`}
+          />
+        );
     }
   };
 
   return (
     <div
       className={`relative p-6 rounded-xl border border-opacity-10 border-gray-500 ${
-        index === 1 ? "bg-white" : "bg-opacity-10 backdrop-blur-sm"
+        index === 1 || index === 3
+          ? "bg-white"
+          : "bg-opacity-10 backdrop-blur-sm"
       }`}
     >
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 flex items-center justify-center">
-            {getIcon(company)}
-          </div>
+          {getIcon(company)}
           <div className="flex flex-col">
             <h3
               className={`text-xl font-semibold ${
-                index === 1 ? "text-black" : "text-white"
+                index === 1 || index === 3 ? "text-black" : "text-white"
               }`}
             >
               {role}
@@ -50,21 +62,21 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
             <div className="flex items-center gap-2">
               <span
                 className={`text-sm ${
-                  index === 1 ? "text-gray-700" : "text-gray-300"
+                  index === 1 || index === 3 ? "text-gray-700" : "text-gray-300"
                 }`}
               >
                 {company}
               </span>
               <span
                 className={`text-sm ${
-                  index === 1 ? "text-gray-600" : "text-gray-400"
+                  index === 1 || index === 3 ? "text-gray-600" : "text-gray-400"
                 }`}
               >
                 •
               </span>
               <span
                 className={`text-sm ${
-                  index === 1 ? "text-gray-700" : "text-gray-300"
+                  index === 1 || index === 3 ? "text-gray-700" : "text-gray-300"
                 }`}
               >
                 {date}
@@ -72,17 +84,10 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
             </div>
           </div>
         </div>
-        <span
-          className={`text-sm ${
-            index === 1 ? "text-gray-700" : "text-gray-300"
-          }`}
-        >
-          {index === 0 ? "2021-Present" : index === 1 ? "2017-19" : ""}
-        </span>
       </div>
       <p
         className={`text-sm leading-relaxed ${
-          index === 1 ? "text-gray-700" : "text-gray-300"
+          index === 1 || index === 3 ? "text-gray-700" : "text-gray-300"
         }`}
       >
         {description}
@@ -94,25 +99,32 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
 export default function ExperienceSection() {
   const experiences = [
     {
-      company: "Google",
-      role: "Lead Software Engineer at Google",
-      date: "Nov 2019 - Present",
+      company: "CodeCrack",
+      role: "Frontend Intern",
+      date: "May 2023 - July 2023",
       description:
-        "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
+        "Worked as a frontend intern, responsible for designing and implementing UI components for a company project. Collaborated with designers to ensure a seamless user experience and gained hands-on experience with modern frontend technologies.",
     },
     {
-      company: "Youtube",
-      role: "Software Engineer at Youtube",
-      date: "Jan 2017 - Oct 2019",
+      company: "ASTUTE Technologies Inc.",
+      role: "Frontend Developer",
+      date: "July 2023 - Present",
       description:
-        "At Youtube, I served as a Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+        "Developing high-performance, scalable web applications with React and Next.js. Integrating APIs, enhancing UI/UX, and working on admin panels for enterprise-level applications. Responsible for ensuring pixel-perfect implementation and smooth user interactions.",
     },
     {
-      company: "Apple",
-      role: "Junior Software Engineer at Apple",
-      date: "Jan 2016 - Dec 2017",
+      company: "BlackByte",
+      role: "Part-Time Web Developer",
+      date: "Sep 2024 - Dec 2024",
       description:
-        "During my tenure at Apple, I held the role of Software Architect, where I played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team.",
+        "Worked with a London-based startup to develop responsive, user-friendly websites. Built and maintained multiple blogging platforms using React, Next.js, and Firebase. Integrated CMS solutions and optimized web performance for better user engagement.",
+    },
+    {
+      company: "Freelancing",
+      role: "Freelance Frontend Developer",
+      date: "2022 - Present",
+      description:
+        "Designed and developed web applications for international clients on Upwork and Fiverr. Specialized in React, Next.js, and Tailwind CSS, delivering high-quality, scalable solutions. Collaborated with clients to build landing pages, dashboards, and SaaS platforms.",
     },
   ];
 
@@ -133,11 +145,3 @@ export default function ExperienceSection() {
     </section>
   );
 }
-
-// import React from "react";
-
-// const experience = () => {
-//   return <div className="h-[40vh] bg-red-300">experience</div>;
-// };
-
-// export default experience;

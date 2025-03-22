@@ -13,42 +13,33 @@ import {
   SiFigma,
   SiGit,
   SiRedux,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
 
 const skills = [
+  { name: "HTML", icon: <SiHtml5 size={35} className="text-[#242F65]" /> },
+  { name: "CSS", icon: <SiCss3 size={35} className="text-[#242F65]" /> },
   {
     name: "JavaScript",
     icon: <SiJavascript size={35} className="text-[#242F65]" />,
-  },
-  {
-    name: "TypeScript",
-    icon: <SiTypescript size={35} className="text-[#242F65]" />,
   },
   { name: "React", icon: <SiReact size={35} className="text-[#242F65]" /> },
   {
     name: "Next.js",
     icon: <SiNextdotjs size={35} className="text-[#242F65]" />,
   },
-  {
-    name: "Node.js",
-    icon: <SiNodedotjs size={35} className="text-[#242F65]" />,
-  },
-  {
-    name: "Express.js",
-    icon: <SiExpress size={35} className="text-[#242F65]" />,
-  },
-  { name: "MongoDB", icon: <SiMongodb size={35} className="text-[#242F65]" /> },
-  {
-    name: "Firebase",
-    icon: <SiFirebase size={35} className="text-[#242F65]" />,
-  },
+  { name: "Redux", icon: <SiRedux size={35} className="text-[#242F65]" /> },
   {
     name: "TailwindCSS",
     icon: <SiTailwindcss size={35} className="text-[#242F65]" />,
   },
   { name: "Figma", icon: <SiFigma size={35} className="text-[#242F65]" /> },
+  {
+    name: "Firebase",
+    icon: <SiFirebase size={35} className="text-[#242F65]" />,
+  },
   { name: "Git", icon: <SiGit size={35} className="text-[#242F65]" /> },
-  { name: "Redux", icon: <SiRedux size={35} className="text-[#242F65]" /> },
 ];
 
 const SkillsExpertise = () => {
@@ -60,7 +51,7 @@ const SkillsExpertise = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
         {skills.map((skill, index) => (
           <div
             key={index}
