@@ -1,20 +1,41 @@
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata = {
-  title: "Portfolio",
-  description: "UI/UX Designer Portfolio",
+  title: "Muhammad Rehan Ali | Full-Stack Developer",
+  description:
+    "Experienced Full-Stack Developer specializing in MERN stack, Next.js, and SaaS applications. Passionate about building scalable web solutions.",
+  keywords: [
+    "Full-Stack Developer",
+    "MERN Stack",
+    "Next.js",
+    "React",
+    "Node.js",
+    "Firebase",
+    "SaaS",
+    "Web Development",
+  ],
+  author: "John Doe",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        {/* <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/.css" /> */}
-      </head>
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
