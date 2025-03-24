@@ -44,7 +44,7 @@ const skills = [
 
 const SkillsExpertise = () => {
   return (
-    <div className="w-full sm:py-16 lg:py-16 md:py-1 bg-white px-4 mx-auto max-w-6xl">
+    <div className="w-full sm:py-16 lg:py-16 md:py-1 bg-white px-4 mx-auto max-w-6xl py-6">
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-light mb-12">
           My <span className="text-[#1a237e] font-bold">Skills</span>
