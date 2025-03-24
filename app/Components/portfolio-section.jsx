@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,82 +15,144 @@ export default function PortfolioSection() {
       easing: "ease-out-cubic",
     });
   }, []);
+
   const portfolioItems = [
     {
       id: "01",
-      title: "Crypto Screener Application",
+      title: "StoreIt",
       description:
-        "A powerful cryptocurrency tracking tool that provides real-time price updates, market trends, and technical indicators for traders. Built with Next.js and Tailwind CSS, it offers a sleek and intuitive UI for seamless navigation.",
-      image: "https://i.pravatar.cc/500",
+        "A web Solution where users can upload there images, documents and other files, share with others and download them whenever they want.",
+      image: "/project1.png",
+      categories: ["Website", "Next js", "Full stack", "App write"],
+      url: "https://example.com/storeit",
     },
     {
       id: "02",
-      title: "Euphoria - Fashion Ecommerce Platform",
-      description:
-        "An elegant and modern e-commerce store specializing in apparel and accessories. Featuring a robust product catalog, secure checkout, and user-friendly filters to enhance the shopping experience. Developed using Next.js, Firebase, and Stripe for payments.",
-      image: "https://i.pravatar.cc/481",
+      title: "purplebyte",
+      description: "A landing page for a software company",
+      image: "/project2.png",
+      categories: ["Website", "Next js", "Frontend"],
+      url: "https://purplebyte.netlify.app/",
     },
     {
       id: "03",
-      title: "Creative Design Blog",
-      description:
-        "A dynamic blogging platform for designers and creatives to showcase their work, share insights, and explore the latest design trends. Built with a headless CMS for easy content management and SEO optimization.",
+      title: "chatTick Admin",
+      description: "Admin panel for SAAS chat application",
+      image: "/project3.png",
+      categories: ["Firebase", "Next js", "react echarts"],
+      url: "https://chattickadmin.vercel.app/",
+    },
+    {
+      id: "04",
+      title: "Packaging Design",
+      description: "Elegant packaging solutions for premium products",
+      image: "https://i.pravatar.cc/520",
+      categories: ["Packaging", "Branding", "Product"],
+      url: "https://example.com/packaging-design",
+    },
+    {
+      id: "05",
+      title: "Website Design",
+      description: "Modern web experiences with responsive layouts",
+      image: "https://i.pravatar.cc/510",
+      categories: ["Website", "UI/UX", "Development"],
+      url: "https://example.com/website-design",
+    },
+    {
+      id: "06",
+      title: "Application Design",
+      description: "Modern web experiences with responsive layouts",
+      image: "https://i.pravatar.cc/481",
+      categories: ["Website", "UI/UX", "Development"],
+      url: "https://example.com/application-design-2",
+    },
+    {
+      id: "07",
+      title: "Branding Identity",
+      description: "Modern web experiences with responsive layouts",
       image: "https://i.pravatar.cc/480",
+      categories: ["Website", "UI/UX", "Development"],
+      url: "https://example.com/branding-identity-2",
     },
   ];
 
   return (
-    <section
-      className="py-16 px-4 md:px-6 lg:px-8 bg-[#242F65] transition-all duration-700"
-      data-aos="fade-up"
-    >
+    <section className="py-16 px-4 md:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-center font-light" data-aos="fade-down">
-          <h2 className="text-4xl text-white font-light mb-12 transition-all duration-500 hover:scale-105">
-            My <span className="text-white font-bold">Projects</span>
+        <div className="mb-16 text-center w-full">
+          <h2 className="text-4xl font-light mb-6">
+            Selected <span className="text-[#1a237e] font-bold">work!</span>
           </h2>
+          <p className="text-gray-500 mt-2">
+            A collection of our recent projects and collaborations
+          </p>
         </div>
-        <div className="flex flex-col gap-16">
+
+        <div className="flex flex-col gap-24">
           {portfolioItems.map((item, index) => (
             <div
               key={item.id}
-              className="group transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-gray-100/90 hover:to-gray-50/90 p-6 rounded-lg transform hover:-translate-y-1 hover:shadow-xl"
+              className="relative"
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              data-aos-easing="ease-out-cubic"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                {/* Image Section - Alternates between left and right */}
                 <div
-                  className={`relative overflow-hidden rounded-lg transform transition-all duration-700 ease-in-out group-hover:scale-102 shadow-lg before:absolute before:inset-0 before:bg-black/0 before:transition-all before:duration-700 group-hover:before:bg-black/5 ${
-                    index % 2 === 0 ? "md:order-2" : "md:order-1"
+                  className={`relative h-[300px] sm:h-[400px] w-full bg-gray-100 ${
+                    index % 2 === 0 ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={500}
-                    height={300}
-                    className="w-full h-auto object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="space-y-4 md:order-1 transition-all duration-500">
-                  <div className="flex flex-col items-start gap-4">
-                    <h3 className="text-4xl font-bold text-white transition-colors duration-500 ease-in-out group-hover:text-[#1a237e]">
-                      {item.id}
-                    </h3>
-                    <h4 className="text-2xl font-semibold text-white transition-colors duration-500 ease-in-out group-hover:text-black">
-                      {item.title}
-                    </h4>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={item.image || "/placeholder.svg"}
+                      alt={item.title}
+                      fill
+                      className="object-cover "
+                    />
+                  </a>
+
+                  {/* Navigation button */}
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-black text-white hover:bg-[#242F65] w-14 h-14 sm:w-16 sm:h-16 p-0 flex items-center justify-center border-3 border-white"
+                    >
+                      <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                    </a>
                   </div>
-                  <p className="text-white transition-colors duration-500 ease-in-out group-hover:text-black">
-                    {item.description}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    className="p-0 hover:bg-transparent group-hover:text-[#1a237e] transition-all duration-500 ease-in-out hover:translate-x-2"
-                  >
-                    <ArrowRight className="h-6 w-6 transform transition-all duration-500 ease-in-out group-hover:translate-x-2 text-white group-hover:text-[#1a237e]" />
-                  </Button>
+                </div>
+
+                {/* Content Section - Alternates between left and right */}
+                <div
+                  className={`flex flex-col justify-center ${
+                    index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                  } pt-8 lg:pt-0`}
+                >
+                  <div className="space-y-4">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-black">
+                      {item.title}
+                    </h2>
+                    <p className="text-gray-500 text-base font-light">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <div className="flex flex-wrap gap-2">
+                      {item.categories.map((category, idx) => (
+                        <Button
+                          key={idx}
+                          variant="outline"
+                          className="rounded-full shadow-none border-gray-200 hover:bg-[#242F65] hover:text-white text-gray-700 font-normal text-sm h-8 px-4"
+                        >
+                          {category}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
