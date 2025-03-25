@@ -1,47 +1,59 @@
 export default function AboutMeSection() {
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-4 bg-white max-w-6xl  mx-auto w-full ">
+    <section className="py-16 px-4 md:px-6 lg:px-4 bg-white max-w-6xl mx-auto w-full">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-start">
+        <h2 className="text-4xl text-black font-light mb-12 text-center">
+          About <span className="text-[#1a237e] font-bold">Me</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-items-start">
           {/* Left Column - Illustration */}
           <div className="flex justify-center">
             <img
               src="/about.png"
-              alt="Developer Illustration"
+              alt="Frontend Developer"
               className="w-full max-w-md"
             />
           </div>
 
           {/* Right Column - Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl text-black font-light mb-12">
-              About <span className="text-[#1a237e] font-bold">Me</span>
-            </h2>
-
             <p className="text-gray-600 leading-relaxed">
-              I’m a passionate frontend developer specializing in React.js and
-              Next.js,. I love turning ideas into interactive, high-performance
-              digital experiences. From crafting pixel-perfect UI designs to
-              ensuring smooth user interactions, I focus on delivering clean,
-              maintainable, and efficient code.
+              I'm a <strong>results-driven frontend developer</strong>{" "}
+              passionate about building{" "}
+              <strong>scalable, high-performance web applications</strong>.
             </p>
 
-            <p className="text-gray-600 leading-relaxed">
-              I started my web development journey a few years ago and have been
-              continuously learning and evolving ever since. Over time, I’ve
-              worked on scalable web applications, admin panels, and SaaS
-              platforms, using modern technologies like TypeScript, Tailwind
-              CSS, Firebase, and Supabase. My goal is to build fast, accessible,
-              and user-friendly applications that make an impact.
-            </p>
+            <h2 className="text-2xl font-semibold">Key Skills & Expertise:</h2>
+            <ul className="  text-gray-600 leading-relaxed">
+              <li>
+                ✅ <strong>Frontend Development:</strong> Proficient in React,
+                Next.js, and javaScript.
+              </li>
+              <li>
+                ✅ <strong>State & Data Management:</strong> Experience with
+                Redux, TanStack Query, and Firebase.
+              </li>
+              <li>
+                ✅ <strong>Performance Optimization:</strong> Writing efficient,
+                maintainable code for speed & accessibility.
+              </li>
+              <li>
+                ✅ <strong>API Integration:</strong> Seamless integration of
+                REST APIs and third-party services.
+              </li>
+              <li>
+                ✅ <strong>Collaboration:</strong> Agile development, teamwork,
+                and problem-solving in fast-paced environments.
+              </li>
+            </ul>
 
             <div className="pt-4">
               <h3 className="text-xl font-semibold mb-2">Education</h3>
               <p className="text-gray-600">
-                Bachelor's Degree in Computer Science
+                <strong>Bachelor's Degree in Computer Science</strong>
               </p>
               <p className="text-gray-600">
-                <strong>IUB</strong> Islamia University of Bahawalpur
+                Islamia University of Bahawalpur (<strong>IUB</strong>)
               </p>
             </div>
           </div>

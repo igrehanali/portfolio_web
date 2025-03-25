@@ -4,15 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Github, Mail } from "lucide-react";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function HeroSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   return (
     <section className="relative w-full h-screen flex items-center justify-center px-6 sm:px-10 lg:px-16 bg-gray-100 md:pt-20 pt-28">
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left Content */}
-        <div className="text-center lg:text-left">
+        <div className="text-center lg:text-left" data-aos="fade-right">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            👋🏻Hey i'm Rehan
+            👋🏻Hey I'm Rehan
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mt-3">
             Frontend Engineer | React & Next.js Specialist
@@ -20,7 +29,7 @@ export default function HeroSection() {
           <p className="text-gray-600 max-w-xl mt-4 mx-auto lg:mx-0">
             I specialize in designing and developing high-performance web
             applications that leverage cutting-edge frontend technologies like
-            <strong>React, Next.js, and Tailwind CSS.</strong> My passion lies
+            <strong> React, Next.js, and Tailwind CSS.</strong> My passion lies
             in creating exceptional user experiences while collaborating
             effectively with dynamic teams to bring innovative ideas to life.
           </p>
@@ -54,6 +63,8 @@ export default function HeroSection() {
                 className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center 
                            text-gray-700 hover:text-white hover:bg-[#1a237e] hover:border-[#1a237e] 
                            hover:scale-110 transition-all duration-300 ease-out"
+                data-aos="fade-up"
+                data-aos-delay={social.delay}
               >
                 {social.icon}
               </Link>
@@ -62,7 +73,10 @@ export default function HeroSection() {
         </div>
 
         {/* Right Content - Image */}
-        <div className="relative flex justify-center items-center">
+        <div
+          className="relative flex justify-center items-center"
+          data-aos="fade-left"
+        >
           <div className="relative">
             <Image
               src="/hero.jpg"
