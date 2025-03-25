@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AnimatedCursor from "react-animated-cursor";
 
 const inter = Inter({
   subsets: ["latin"],
