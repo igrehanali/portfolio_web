@@ -28,6 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>{children}</body>
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "61ca9397f8a54816b4d7c48875d85ea3"}'
+      ></script>
     </html>
   );
 }
