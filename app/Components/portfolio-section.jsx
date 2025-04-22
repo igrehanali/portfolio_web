@@ -24,7 +24,7 @@ export default function PortfolioSection() {
         "A cloud-based platform for secure file storage, sharing, and seamless access anytime.",
       image: "/project1.png",
       categories: ["Full Stack", "Next.js", "Appwrite", "Storage"],
-      url: "https://example.com/storeit",
+      url: "https://storage-management-solution.vercel.app/",
     },
     {
       id: "02",
