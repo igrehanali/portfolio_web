@@ -19,45 +19,54 @@ export default function PortfolioSection() {
   const portfolioItems = [
     {
       id: "01",
-      title: "StoreIt",
+      title: "BLackBit – Tech Services Company",
       description:
-        "A cloud-based platform for secure file storage, sharing, and seamless access anytime.",
+        "A full-featured website for a tech services company, showcasing innovative IT solutions tailored for businesses of all sizes.",
+      image: "/project0.png",
+      categories: ["Full Stack", "Next.js", "UI/UX"],
+      url: "https://blackbit20.netlify.app/",
+    },
+    {
+      id: "02",
+      title: "StoreIt Cloud – File Management Platform",
+      description:
+        "A secure, cloud-based platform designed for storing, managing, and sharing files with seamless real-time access.",
       image: "/project1.png",
       categories: ["Full Stack", "Next.js", "Appwrite", "Storage"],
       url: "https://storage-management-solution.vercel.app/",
     },
     {
-      id: "02",
-      title: "PurpleByte",
+      id: "03",
+      title: "PurpleByte – Software Landing Page",
       description:
-        "A sleek and modern landing page for a cutting-edge software company.",
+        "A sleek, modern, and responsive landing page for a futuristic software company—built to impress from first glance.",
       image: "/project2.png",
       categories: ["Frontend", "Next.js", "Tailwind CSS"],
       url: "https://purplebyte.netlify.app/",
     },
     {
-      id: "03",
-      title: "ChatTick Admin",
+      id: "04",
+      title: "ChatTick Admin – SaaS Dashboard",
       description:
-        "A powerful admin panel for managing a SaaS-based chat application.",
+        'An intuitive and powerful admin dashboard for managing users, messages, and analytics in a SaaS chat app. Email: "admin@example.com" Password: "admin1234"',
       image: "/project3.png",
       categories: ["Next.js", "Firebase", "React ECharts"],
       url: "https://chattickadmin.vercel.app/",
     },
     {
-      id: "04",
-      title: "ShipPacks",
+      id: "05",
+      title: "Diagram Web – Logistics Platform",
       description:
-        "A logistics solution for seamless package delivery and tracking.",
+        "Developed a modern, responsive design tools showcase website using React and Tailwind CSS, featuring interactive UI sections and smooth animations.",
       image: "/project4.png",
-      categories: ["E-commerce", "Branding", "Logistics"],
-      url: "https://shippacks.com/",
+      categories: ["E-commerce", "Logistics", "Branding"],
+      url: "https://diagramweb.netlify.app/",
     },
     {
-      id: "05",
-      title: "Data AI",
+      id: "06",
+      title: "Data AI – Analytics & Visualization",
       description:
-        "An advanced analytics platform for AI-driven insights and visualization.",
+        "A dynamic platform leveraging AI to deliver smart insights and beautiful visualizations with cutting-edge UI components.",
       image: "/project5.png",
       categories: ["AI", "Next.js", "Tailwind CSS", "AOS"],
       url: "https://framerwebsite-blush.vercel.app/",
@@ -65,7 +74,7 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8">
+    <section className="relative py-16 px-4 md:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center w-full">
           <h2 className="text-4xl font-light mb-6">
@@ -80,14 +89,14 @@ export default function PortfolioSection() {
           {portfolioItems.map((item, index) => (
             <div
               key={item.id}
-              className="relative"
+              className="relative transition-all duration-300 ease-in-out hover:bg-[#1a237e]/10 hover:shadow-xl rounded-2xl cursor-pointer group"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 group-hover:scale-[1.01] transition-transform duration-300 ease-in-out p-4 lg:p-6">
                 {/* Image Section - Alternates between left and right */}
                 <div
-                  className={`relative h-[300px] sm:h-[400px] w-full bg-gray-100 ${
+                  className={`relative h-[300px] sm:h-[400px] w-full bg-gray-100 overflow-hidden ${
                     index % 2 === 0 ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
@@ -96,7 +105,7 @@ export default function PortfolioSection() {
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       fill
-                      className="object-cover "
+                      className="object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
                     />
                   </a>
 
@@ -106,7 +115,7 @@ export default function PortfolioSection() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-black text-white hover:bg-[#242F65] w-14 h-14 sm:w-16 sm:h-16 p-0 flex items-center justify-center border-3 border-white"
+                      className="rounded-full bg-black text-white hover:bg-[#242F65] w-14 h-14 sm:w-16 sm:h-16 p-0 flex items-center justify-center border-3 border-white shadow-lg"
                     >
                       <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
                     </a>
@@ -120,7 +129,7 @@ export default function PortfolioSection() {
                   } pt-8 lg:pt-0`}
                 >
                   <div className="space-y-4">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-black group-hover:text-[#1a237e] transition-colors">
                       {item.title}
                     </h2>
                     <p className="text-gray-500 text-base font-light">
