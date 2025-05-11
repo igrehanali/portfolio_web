@@ -54,7 +54,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link
-              href="/"
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                scrollToSection("hero");
+              }}
               className="text-white font-bold text-2xl md:text-3xl hover:text-[#2c5364] transition-all duration-300"
             >
               Rehan 👨🏻‍💻
@@ -65,7 +69,7 @@ export default function Navbar() {
               <NavButton key={item.id} {...item} />
             ))}
             <a
-              href="/resume.pdf"
+              href="/Rehan-resume-web-dev.pdf"
               className="relative bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white px-6 py-4 rounded-lg text-sm font-medium transform transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c5364] cursor-pointer"
               download
             >
@@ -130,7 +134,7 @@ export default function Navbar() {
               />
             ))}
             <a
-              href="/resume.pdf"
+              href="/Rehan-resume-web-dev.pdf"
               className="bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white block text-center py-3 px-6 w-full rounded-lg text-lg font-medium hover:bg-[#2c5364] transition-all duration-300"
               download
             >
