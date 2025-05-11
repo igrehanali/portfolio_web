@@ -3,72 +3,57 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Briefcase, Code, Globe, Rocket } from "lucide-react"; // Import Icons
+import { Briefcase, Code, Globe, Rocket } from "lucide-react";
+import Header from "./common/header";
 
 const ExperienceCard = ({ company, date, role, description, index }) => {
   const isFirst = index === 0;
 
-  // Assign icons based on company type
   const getIcon = () => {
+    const baseClass = `transition-all duration-300 group-hover:scale-110`;
+    const color = isFirst ? "text-white" : "text-white/70";
+
+    const iconProps = {
+      size: 26,
+      className: `${baseClass} ${color} drop-shadow-sm`,
+    };
+
     switch (company) {
       case "ASTUTE Technologies Inc.":
-        return (
-          <Briefcase
-            size={24}
-            className={isFirst ? "text-gray-800" : "text-gray-300"}
-          />
-        );
+        return <Briefcase {...iconProps} />;
       case "CodeCrack":
-        return (
-          <Code
-            size={24}
-            className={isFirst ? "text-gray-800" : "text-gray-300"}
-          />
-        );
+        return <Code {...iconProps} />;
       case "Freelancing":
-        return (
-          <Globe
-            size={24}
-            className={isFirst ? "text-gray-800" : "text-gray-300"}
-          />
-        );
+        return <Globe {...iconProps} />;
       case "BlackByte":
-        return (
-          <Rocket
-            size={24}
-            className={isFirst ? "text-gray-800" : "text-gray-300"}
-          />
-        );
+        return <Rocket {...iconProps} />;
       default:
-        return (
-          <Briefcase
-            size={24}
-            className={isFirst ? "text-gray-800" : "text-gray-300"}
-          />
-        );
+        return <Briefcase {...iconProps} />;
     }
   };
 
   return (
     <div
       data-aos="fade-up"
-      data-aos-delay={index * 100}
-      className={`relative p-5 sm:p-6 rounded-xl border 
+      data-aos-delay={index * 120}
+      className={`group relative p-6 rounded-2xl border 
+      transition-all duration-300 hover:scale-[1.02] md:hover:scale-[1.05] hover:shadow-xl
       ${
         isFirst
-          ? "bg-white border-gray-300 shadow-lg"
-          : "bg-[#1e2b5e] border-gray-500 text-white"
-      } 
-      transition-all duration-300 hover:scale-[1.02] md:hover:scale-[1.05]
-      flex flex-col gap-3 sm:gap-4`}
+          ? "bg-gradient-to-br from-white/80 to-white/60 border-white/30 shadow-2xl"
+          : "bg-white/5 border-white/10 backdrop-blur-xl"
+      }`}
     >
-      {/* Title & Icon */}
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded-lg bg-opacity-20">
-          {getIcon()} {/* Render relevant icon */}
+      {/* Icon + Role */}
+      <div className="flex items-center gap-4 mb-4">
+        <div
+          className={`p-3 rounded-xl bg-white/10 backdrop-blur-md 
+          ${isFirst ? "shadow-lg" : "shadow-md"} transition-all duration-300`}
+        >
+          {getIcon()}
         </div>
         <h3
-          className={`text-lg sm:text-xl font-semibold ${
+          className={`text-xl sm:text-2xl font-semibold tracking-wide ${
             isFirst ? "text-black" : "text-white"
           }`}
         >
@@ -77,8 +62,10 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
       </div>
 
       {/* Company & Date */}
-      <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base">
-        <span className={isFirst ? "text-gray-700" : "text-gray-300"}>
+      <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base mb-3">
+        <span
+          className={isFirst ? "text-gray-800 font-medium" : "text-gray-300"}
+        >
           {company}
         </span>
         <span className={isFirst ? "text-gray-600" : "text-gray-400"}>•</span>
@@ -90,7 +77,7 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
       {/* Description */}
       <p
         className={`text-sm sm:text-base leading-relaxed ${
-          isFirst ? "text-gray-700" : "text-gray-300"
+          isFirst ? "text-gray-800" : "text-gray-300"
         }`}
       >
         {description}
@@ -110,40 +97,32 @@ export default function ExperienceSection() {
       role: "Frontend Developer",
       date: "July 2023 - Present",
       description:
-        "Developing high-performance, scalable web applications with React and Next.js. Integrating APIs, enhancing UI/UX, and working on admin panels for enterprise-level applications.",
+        "Crafting high-performance enterprise apps with React and Next.js. Collaborated on admin dashboards, responsive UIs, and integrated multiple APIs for real-time workflows.",
     },
-    // {
-    //   company: "Freelancing",
-    //   role: "Freelance Frontend Developer",
-    //   date: "2022 - Present",
-    //   description:
-    //     "Designed and developed web applications for international clients on Upwork and Fiverr. Specialized in React, Next.js, and Tailwind CSS, delivering high-quality, scalable solutions.",
-    // },
     {
       company: "BlackByte",
       role: "Part-Time Web Developer",
       date: "Sep 2024 - Dec 2024",
       description:
-        "Worked with a London-based startup to develop responsive, user-friendly websites. Built and maintained multiple blogging platforms using React, Next.js, and Firebase.",
+        "Built stunning blogging platforms for a London-based startup. Leveraged React, Next.js, and Firebase to deliver seamless user experience across devices.",
     },
     {
       company: "CodeCrack",
       role: "Frontend Intern",
       date: "May 2023 - July 2023",
       description:
-        "Worked as a frontend intern, responsible for designing and implementing UI components for a company project. Collaborated with designers to ensure a seamless user experience.",
+        "Designed clean, modern UI components. Collaborated closely with the design team to ensure pixel-perfect implementation and optimal performance.",
     },
   ];
 
   return (
-    <section className="w-full bg-[#1e2b5e] py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl text-white font-light">
-            My <span className="font-bold">Experience</span>
-          </h2>
-        </div>
-        <div className="space-y-6">
+    <section className="w-full py-24 px-4 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]">
+      <div className="max-w-6xl mx-auto">
+        <Header
+          heading="My Experience"
+          subHeading="Companies and startups I've helped build and scale through code."
+        />
+        <div className="space-y-10 sm:space-y-8">
           {experiences.map((exp, index) => (
             <ExperienceCard key={index} {...exp} index={index} />
           ))}

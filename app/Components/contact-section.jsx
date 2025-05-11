@@ -6,31 +6,31 @@ import { Mail, Phone } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative py-16 px-4 md:px-6 lg:px-8 bg-gray-100">
+    <section className="relative py-16 lg:py-24 px-4 md:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl text-gray-900 mb-6 font-bold">
-          Let's <span className="text-[#1a237e]">Connect</span>
+        <h2 className="text-4xl text-gray-900 mb-6 font-semibold">
+          Let's <span className="text-[#2c5364] font-extrabold">Connect</span>
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-lg">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
           I'm actively seeking full-time opportunities where I can contribute my
           front-end skills and passion for UI/UX to innovative teams. Feel free
           to get in touch!
         </p>
       </div>
 
-      {/* Contact Info */}
+      {/* Contact Info Cards */}
       <div className="max-w-lg mx-auto grid grid-cols-1 gap-6 text-center">
         {contactDetails.map((item, index) => (
           <div
             key={index}
-            className="p-4 bg-white shadow-md rounded-lg flex items-center justify-center space-x-3 border border-gray-200"
+            className="p-4 bg-white shadow-lg rounded-xl flex items-center justify-center space-x-4 border border-gray-200 hover:shadow-xl transition-all duration-300"
           >
-            <item.icon className="w-6 h-6 text-[#1a237e]" />
+            <item.icon className="w-6 h-6 text-[#203a43]" />
             <a
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-800 hover:underline"
+              className="text-lg text-gray-800 hover:text-[#2c5364] font-medium"
             >
               {item.text}
             </a>
@@ -39,16 +39,16 @@ export default function ContactSection() {
       </div>
 
       {/* Social Links */}
-      <div className="mt-8 flex justify-center gap-4">
+      <div className="mt-10 flex justify-center gap-6">
         {socialLinks.map((social, index) => (
           <a
             key={index}
             href={social.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-200 text-gray-600 hover:bg-[#1a237e] hover:text-white transition-all"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-200 text-gray-600 hover:bg-[#203a43] hover:text-white transition-all duration-200"
           >
-            <social.icon className="w-5 h-5" />
+            <social.icon className="w-6 h-6" />
           </a>
         ))}
       </div>

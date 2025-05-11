@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Header from "./common/header";
 
 export default function PortfolioSection() {
   useEffect(() => {
@@ -74,29 +75,24 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section className="relative py-16 px-4 md:px-6 lg:px-8">
+    <section className="relative py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-center w-full">
-          <h2 className="text-4xl font-light mb-6">
-            Selected <span className="text-[#1a237e] font-bold">work!</span>
-          </h2>
-          <p className="text-gray-500 mt-2">
-            A collection of our recent projects and collaborations
-          </p>
-        </div>
-
+        <Header
+          heading="Selected work"
+          subHeading="A collection of our recent projects and collaborations"
+        />
         <div className="flex flex-col gap-24">
           {portfolioItems.map((item, index) => (
             <div
               key={item.id}
-              className="relative transition-all duration-300 ease-in-out hover:bg-[#1a237e]/10 hover:shadow-xl rounded-2xl cursor-pointer group"
+              className="relative transition-all duration-300 ease-in-out group rounded-2xl bg-white/5 backdrop-blur-sm hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-white/10 hover:border-white/20 overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 group-hover:scale-[1.01] transition-transform duration-300 ease-in-out p-4 lg:p-6">
-                {/* Image Section - Alternates between left and right */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 group-hover:scale-[1.01] transition-transform duration-300 ease-in-out">
+                {/* Image Section */}
                 <div
-                  className={`relative h-[300px] sm:h-[400px] w-full bg-gray-100 overflow-hidden ${
+                  className={`relative h-[300px] sm:h-[400px] w-full bg-gray-900 rounded-xl overflow-hidden ${
                     index % 2 === 0 ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
@@ -105,34 +101,33 @@ export default function PortfolioSection() {
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       fill
-                      className="object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      className="rounded-xl transition-transform duration-300 ease-in-out group-hover:scale-105 object-cover object-center"
                     />
                   </a>
-
-                  {/* Navigation button */}
+                  {/* Nav Button */}
                   <div className="absolute -bottom-0 left-1/2 transform -translate-x-1/2 z-10">
                     <a
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-black text-white hover:bg-[#242F65] w-14 h-14 sm:w-16 sm:h-16 p-0 flex items-center justify-center border-3 border-white shadow-lg"
+                      className="rounded-full bg-gradient-to-tr from-[#0f2027] to-[#2c5364] text-white w-14 h-14 sm:w-16 sm:h-16 p-0 flex items-center justify-center shadow-lg border-4 border-white/20 hover:scale-105 transition-transform"
                     >
                       <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
                     </a>
                   </div>
                 </div>
 
-                {/* Content Section - Alternates between left and right */}
+                {/* Content Section */}
                 <div
-                  className={`flex flex-col justify-center ${
+                  className={`flex flex-col justify-center  p-4 lg:p-6 ${
                     index % 2 === 0 ? "lg:order-2" : "lg:order-1"
                   } pt-8 lg:pt-0`}
                 >
                   <div className="space-y-4">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black group-hover:text-[#1a237e] transition-colors">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#89d6eb] transition-colors">
                       {item.title}
                     </h2>
-                    <p className="text-gray-500 text-base font-light">
+                    <p className="text-gray-300 text-base font-light">
                       {item.description}
                     </p>
                   </div>
@@ -143,7 +138,7 @@ export default function PortfolioSection() {
                         <Button
                           key={idx}
                           variant="outline"
-                          className="rounded-full shadow-none border-gray-200 hover:bg-[#242F65] hover:text-white text-gray-700 font-normal text-sm h-8 px-4"
+                          className="rounded-full bg-white/10 border border-white/20 text-white hover:bg-[#203a43] text-sm font-medium h-8 px-4 backdrop-blur-md transition-colors cursor-none"
                         >
                           {category}
                         </Button>

@@ -16,8 +16,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 bg-gray-100 pt-28 sm:pt-24 md:pt-20">
-      <div className="max-w-[1200px] w-full flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-10">
+    <section className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 bg-[#f3f5f5] pt-28 sm:pt-24 md:pt-20">
+      <div className="max-w-7xl w-full flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-10">
         {/* Left Content */}
         <div
           className="text-center lg:text-left px-2 sm:px-4"
@@ -63,9 +63,9 @@ export default function HeroSection() {
               <Link
                 key={index}
                 href={social.href}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 flex items-center justify-center 
-                           text-gray-700 hover:text-white hover:bg-[#1a237e] hover:border-[#1a237e] 
-                           hover:scale-110 transition-all duration-300 ease-out"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#2c5364] flex items-center justify-center 
+text-[#2c5364] bg-white shadow-md hover:text-white hover:bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] 
+hover:border-transparent hover:scale-110 transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-[#203a43]"
                 data-aos="fade-up"
                 data-aos-delay={social.delay}
               >
