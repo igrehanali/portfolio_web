@@ -16,8 +16,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-[99vh] flex items-center justify-center px-4 sm:px-6 bg-[#f3f5f5] pt-28 sm:pt-24 md:pt-20">
-      <div className="max-w-7xl w-full flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-10">
+    <section className="relative w-full h-[99vh] flex items-center justify-center px-4 sm:px-1 bg-[#f3f5f5] pt-28 sm:pt-24 md:pt-20">
+      <div className="max-w-6xl w-full flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-10">
         {/* Left Content */}
         <div
           className="text-center lg:text-left px-2 sm:px-4"

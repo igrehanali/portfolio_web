@@ -38,7 +38,7 @@ export default function Navbar() {
   const NavButton = ({ id, label, className = "" }) => (
     <button
       onClick={() => scrollToSection(id)}
-      className={`text-white px-5 py-3 rounded-lg text-base font-semibold transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 cursor-pointer  hover:text-white ${className}`}
+      className={`text-white  px-5 py-3 rounded-lg text-base font-semibold transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 cursor-pointer  hover:text-white ${className}`}
     >
       {label}
     </button>
@@ -48,9 +48,9 @@ export default function Navbar() {
     <nav
       className={`${
         isSticky ? "sticky top-0 shadow-xl" : "fixed"
-      } w-full bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] backdrop-blur-lg z-50 transition-all duration-300`}
+      } w-full bg-gradient-to-br from-[#0f2027] via-[#203a43]  to-[#2c5364] backdrop-blur-lg z-50 transition-all duration-300`}
     >
-      <div className="px-6 sm:px-8 lg:px-12">
+      <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link
@@ -70,7 +70,7 @@ export default function Navbar() {
             ))}
             <a
               href="/Rehan-resume-web-dev.pdf"
-              className="relative shadow-lg bg-[#2c5364] text-white px-6 py-4 rounded-lg text-sm font-medium transform transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c5364] cursor-pointer border border-white/30"
+              className="relative shadow-lg bg-[#2c5364] text-white px-6 py-4 rounded-lg text-sm font-medium transform transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c5364] cursor-pointer border border-white/10"
               download
             >
               Download Resume

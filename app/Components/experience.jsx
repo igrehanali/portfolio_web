@@ -3,15 +3,22 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Briefcase, Code, Globe, Rocket } from "lucide-react";
 import Header from "./common/header";
+import { Briefcase, Code, Globe, Rocket, MapPin } from "lucide-react";
 
-const ExperienceCard = ({ company, date, role, description, index }) => {
-  const isFirst = index === 0;
+const ExperienceCard = ({
+  company,
+  date,
+  role,
+  description,
+  location,
+  index,
+}) => {
+  const isPrimaryCard = index === 0 || index === 2;
 
   const getIcon = () => {
     const baseClass = `transition-all duration-300 group-hover:scale-110`;
-    const color = isFirst ? "text-white" : "text-white/70";
+    const color = isPrimaryCard ? "text-white" : "text-white/70";
 
     const iconProps = {
       size: 26,
@@ -36,48 +43,66 @@ const ExperienceCard = ({ company, date, role, description, index }) => {
     <div
       data-aos="fade-up"
       data-aos-delay={index * 120}
-      className={`group relative p-6 rounded-2xl border 
-      transition-all duration-300 hover:scale-[1.02] md:hover:scale-[1.05] hover:shadow-xl
-      ${
-        isFirst
-          ? "bg-gradient-to-br from-white/80 to-white/60 border-white/30 shadow-2xl"
-          : "bg-white/5 border-white/10 backdrop-blur-xl"
-      }`}
+      className={`group relative p-6 rounded-2xl border
+        transition-all duration-300 hover:scale-[1.02] md:hover:scale-[1.05] hover:shadow-xl
+        ${
+          isPrimaryCard
+            ? "bg-gradient-to-br from-white/80 to-white/60 border-white/30 shadow-2xl"
+            : "bg-white/5 border-white/10 backdrop-blur-2xl"
+        }`}
     >
+      {/* Date in Top Right */}
+      <div className="absolute top-5 right-6 text-sm sm:text-base font-medium">
+        <span className={isPrimaryCard ? "text-gray-700" : "text-white/80"}>
+          {date}
+        </span>
+      </div>
+
       {/* Icon + Role */}
       <div className="flex items-center gap-4 mb-4">
         <div
           className={`p-3 rounded-xl bg-white/10 backdrop-blur-md 
-          ${isFirst ? "shadow-lg" : "shadow-md"} transition-all duration-300`}
+            ${
+              isPrimaryCard ? "shadow-lg bg-[#203a43]" : "shadow-md"
+            } transition-all duration-300`}
         >
           {getIcon()}
         </div>
         <h3
           className={`text-xl sm:text-2xl font-semibold tracking-wide ${
-            isFirst ? "text-black" : "text-white"
+            isPrimaryCard ? "text-black" : "text-white"
           }`}
         >
           {role}
         </h3>
       </div>
 
-      {/* Company & Date */}
-      <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base mb-3">
+      {/* Company */}
+      <div className="mb-4">
         <span
-          className={isFirst ? "text-gray-800 font-medium" : "text-gray-300"}
+          className={
+            isPrimaryCard ? "text-gray-800 font-medium" : "text-gray-300"
+          }
         >
           {company}
         </span>
-        <span className={isFirst ? "text-gray-600" : "text-gray-400"}>•</span>
-        <span className={isFirst ? "text-gray-700" : "text-gray-300"}>
-          {date}
+      </div>
+
+      {/* Location */}
+      <div className="flex items-center gap-2 mb-2 text-sm sm:text-base">
+        <MapPin
+          size={18}
+          className={isPrimaryCard ? "text-gray-800" : "text-white/70"}
+        />
+        <span className={isPrimaryCard ? "text-gray-800" : "text-white/70"}>
+          {location}
         </span>
       </div>
 
       {/* Description */}
       <p
         className={`text-sm sm:text-base leading-relaxed ${
-          isFirst ? "text-gray-800" : "text-gray-300"
+          isPrimaryCard ? "text-gray-800" : "text-white/80"
         }`}
       >
         {description}
@@ -93,11 +118,12 @@ export default function ExperienceSection() {
 
   const experiences = [
     {
-      company: "ASTUTE Technologies Inc.",
-      role: "Frontend Developer",
+      company: "ASTUTE Technologies",
+      role: "Web Developer",
       date: "July 2023 - Present",
       description:
         "Crafting high-performance enterprise apps with React and Next.js. Collaborated on admin dashboards, responsive UIs, and integrated multiple APIs for real-time workflows.",
+      location: "Bahwalpur, Pakistan",
     },
     {
       company: "BlackByte",
@@ -105,6 +131,7 @@ export default function ExperienceSection() {
       date: "Sep 2024 - Dec 2024",
       description:
         "Built stunning blogging platforms for a London-based startup. Leveraged React, Next.js, and Firebase to deliver seamless user experience across devices.",
+      location: "London, UK",
     },
     {
       company: "CodeCrack",
@@ -112,6 +139,7 @@ export default function ExperienceSection() {
       date: "May 2023 - July 2023",
       description:
         "Designed clean, modern UI components. Collaborated closely with the design team to ensure pixel-perfect implementation and optimal performance.",
+      location: "Bahwalpur, Pakistan",
     },
   ];
 
