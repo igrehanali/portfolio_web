@@ -61,9 +61,11 @@ const ExperienceCard = ({
       {/* Icon + Role */}
       <div className="flex items-center gap-4 mb-4">
         <div
-          className={`p-3 rounded-xl bg-white/10 backdrop-blur-md 
+          className={`p-3 rounded-xl backdrop-blur-md 
             ${
-              isPrimaryCard ? "shadow-lg bg-[#203a43]" : "shadow-md"
+              isPrimaryCard
+                ? "shadow-lg bg-[rgba(32,58,67,0.9)]"
+                : "shadow-md  bg-white/10 "
             } transition-all duration-300`}
         >
           {getIcon()}

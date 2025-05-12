@@ -61,7 +61,7 @@ export default function Navbar() {
               }}
               className="text-white font-bold text-2xl md:text-3xl hover:text-[#2c5364] transition-all duration-300"
             >
-              Rehan 👨🏻‍💻
+              Rehan 🧑🏻‍💻
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">
