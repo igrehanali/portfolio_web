@@ -70,7 +70,7 @@ export default function Navbar() {
             ))}
             <a
               href="/Rehan-resume-web-dev.pdf"
-              className="relative bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white px-6 py-4 rounded-lg text-sm font-medium transform transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c5364] cursor-pointer"
+              className="relative shadow-lg bg-[#2c5364] text-white px-6 py-4 rounded-lg text-sm font-medium transform transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c5364] cursor-pointer border border-white/30"
               download
             >
               Download Resume
