@@ -18,15 +18,7 @@ export default function PortfolioSection() {
   }, []);
 
   const portfolioItems = [
-    {
-      id: "01",
-      title: "BLackBit – Tech Services Company",
-      description:
-        "A full-featured website for a tech services company, showcasing innovative IT solutions tailored for businesses of all sizes.",
-      image: "/project0.png",
-      categories: ["Full Stack", "Next.js", "UI/UX"],
-      url: "https://blackbit20.netlify.app/",
-    },
+   
     {
       id: "02",
       title: "StoreIt Cloud – File Management Platform",
