@@ -71,7 +71,7 @@ export default function Navbar() {
             ))}
 
             <a
-              href="/Rehan-resume-web-dev.pdf"
+              href="/Rehan_web_dev_Resume.pdf.pdf"
               className="group relative inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] 
     text-white font-semibold text-base sm:text-lg shadow-[0_8px_24px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)] focus:outline-none"
               download
@@ -134,7 +134,7 @@ export default function Navbar() {
               />
             ))}
             <a
-              href="/Rehan-resume-web-dev.pdf"
+              href="/Rehan_web_dev_Resume.pdf.pdf"
               className="bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white block text-center py-3 px-6 w-full rounded-lg text-lg font-medium hover:bg-[#2c5364] transition-all duration-300"
               download
             >
