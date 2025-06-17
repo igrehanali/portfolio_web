@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Header from "./common/header";
+import Link from "next/link";
 
 export default function PortfolioSection() {
   useEffect(() => {
@@ -149,6 +150,13 @@ export default function PortfolioSection() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center items-center w-full">
+          <Link href="/projects">
+            <button className="mt-12 px-6 py-4  rounded-xl bg-[#2c5364] text-white font-semibold shadow-md hover:scale-105 transition-transform duration-300 ">
+              View all projects
+            </button>
+          </Link>
         </div>
       </div>
     </section>

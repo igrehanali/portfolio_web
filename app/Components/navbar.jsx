@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link
-              href="#hero"
+              href="/"
               onClick={(e) => {
                 e.preventDefault(); // Prevent default anchor behavior
                 scrollToSection("hero");

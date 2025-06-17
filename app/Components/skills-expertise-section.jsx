@@ -15,6 +15,7 @@ import {
   SiHtml5,
   SiCss3,
 } from "react-icons/si";
+import GlareHover from "../../src/blocks/Animations/GlareHover/GlareHover";
 
 const skills = [
   { name: "HTML", icon: <SiHtml5 size={35} className="text-[#FF5733]" /> },
@@ -55,7 +56,6 @@ const SkillsExpertise = () => {
           The technologies I work with to build amazing digital experiences.
         </p>
       </div>
-
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
         {skills.map((skill, index) => (
           <div
@@ -63,7 +63,6 @@ const SkillsExpertise = () => {
             className="flex flex-col items-center transition-all duration-500 ease-in-out transform hover:scale-105 border border-[#305c6e] hover:bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] hover:shadow-lg p-4 animate-fade-in group rounded-md"
             style={{ animationDelay: `${index * 50}ms` }}
           >
-            {/* Icon */}
             <div className="w-[5rem] h-[5rem] mb-2 flex items-center justify-center group-hover:text-white transition-all duration-500 ease-in-out">
               {React.cloneElement(skill.icon, {
                 className:

@@ -6,7 +6,7 @@ import { Linkedin, Github, Mail } from "lucide-react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import TextPressure from "../../src/blocks/TextAnimations/TextPressure/TextPressure";
 export default function HeroSection() {
   useEffect(() => {
     AOS.init({
@@ -23,9 +23,20 @@ export default function HeroSection() {
           className="text-center lg:text-left px-2 sm:px-4"
           data-aos="fade-right"
         >
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-snug">
-            👋🏻Hey I'm Rehan
-          </h1>
+          <div>
+            <TextPressure
+              text="Hey I'm Rehan"
+              flex={true}
+              alpha={false}
+              stroke={false}
+              width={true}
+              weight={true}
+              italic={true}
+              textColor="#000"
+              strokeColor="#ff0000"
+              minFontSize={48}
+            />
+          </div>
           <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mt-3">
             Frontend Engineer | React & Next.js Specialist
           </h2>
