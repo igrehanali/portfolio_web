@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ArrowRight, Download } from "lucide-react";
 
 const menuItems = [
   { id: "about", label: "About Me" },
@@ -68,16 +69,15 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <NavButton key={item.id} {...item} />
             ))}
+
             <a
               href="/Rehan-resume-web-dev.pdf"
-              className="relative shadow-lg bg-[#2c5364] text-white px-6 py-4 rounded-lg text-sm font-medium transform transition-all duration-300 hover:bg-[#2c5364] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c5364] cursor-pointer border border-white/10"
+              className="group relative inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] 
+    text-white font-semibold text-base sm:text-lg shadow-[0_8px_24px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)] focus:outline-none"
               download
             >
-              Download Resume
-              <span className="absolute -top-1 -right-1 mr-2 mt-2 flex items-center justify-center">
-                <span className="absolute inline-flex h-4 w-4 animate-ping rounded-full bg-[#2c5364] opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ffffff]"></span>
-              </span>
+              <span className="absolute inset-0 rounded-full bg-white opacity-10 blur-md group-hover:opacity-20 transition-opacity duration-300" />
+              📄 Resume
             </a>
           </div>
           <div className="md:hidden">

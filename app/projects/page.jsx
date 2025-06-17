@@ -471,6 +471,21 @@ export default function ProjectsPage() {
   }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]">
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={40}
+        color="255, 255, 255"
+        outerAlpha={0.2}
+        innerScale={1}
+        outerScale={2.5}
+        outerStyle={{
+          border: "2px solid rgba(26, 35, 62, 0.5)", // Updated border color
+        }}
+        innerStyle={{
+          backgroundColor: "white", // Inner cursor color
+        }}
+        clickables={["a", "button", ".link"]}
+      />
       <div className="relative z-10 container mx-auto px-4 py-12 pb-40 ">
         {/* Header */}
         <div className="text-center mb-6">

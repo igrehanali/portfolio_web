@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github, Mail, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -53,7 +53,7 @@ export default function HeroSection() {
           </p>
 
           {/* Social Links */}
-          <div className="flex justify-center lg:justify-start space-x-4 pt-6">
+          {/* <div className="flex justify-center lg:justify-start space-x-4 pt-6">
             {[
               {
                 icon: <Linkedin className="w-5 h-5" />,
@@ -83,6 +83,22 @@ hover:border-transparent hover:scale-110 transition-all duration-300 ease-out fo
                 {social.icon}
               </Link>
             ))}
+          </div> */}
+          {/* CTA Button */}
+          <div
+            className="mt-8 flex justify-center lg:justify-start"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <Link
+              href="/project"
+              className="group relative inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] 
+    text-white font-semibold text-base sm:text-lg shadow-[0_8px_24px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)] focus:outline-none"
+            >
+              <span className="absolute inset-0 rounded-full bg-white opacity-10 blur-md group-hover:opacity-20 transition-opacity duration-300" />
+              🚀 View Projects
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
 

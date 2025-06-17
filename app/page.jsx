@@ -38,7 +38,7 @@ export default function Home() {
             border: "2px solid rgba(26, 35, 62, 0.5)", // Updated border color
           }}
           innerStyle={{
-            backgroundColor: "white", // Inner cursor color
+            backgroundColor: "#0f2027", // Inner cursor color
           }}
           clickables={["a", "button", ".link"]}
         />
