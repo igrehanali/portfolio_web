@@ -13,6 +13,7 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "../Components/navbar";
+import AnimatedCursor from "react-animated-cursor";
 
 const mockProjects = [
   {
