@@ -687,26 +687,28 @@ export default function ProjectsPage() {
         {/* Pagination */}
         {totalPages > 1 && (
           <div
-            className="flex justify-center items-center gap-4"
+            className="flex flex-wrap sm:flex-nowrap justify-center items-center gap-3 sm:gap-4 mt-6"
             data-aos="fade-up"
             data-aos-delay="100"
           >
+            {/* Previous Button */}
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white backdrop-blur-md hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
               <ChevronLeft size={16} />
-              Previous
+              <span className="hidden xs:inline">Previous</span>
             </button>
 
-            <div className="flex gap-2">
+            {/* Page Numbers */}
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide px-1 max-w-full sm:max-w-none">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                 (page) => (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
+                    className={`min-w-[36px] h-9 sm:w-10 sm:h-10 rounded-md text-sm sm:text-base font-medium transition-all duration-300 ${
                       currentPage === page
                         ? "bg-[#203a43] border-[#2c5364] text-white border"
                         : "bg-[#0f2027] border border-[#2c5364] text-white hover:bg-[#203a43]"
@@ -718,14 +720,15 @@ export default function ProjectsPage() {
               )}
             </div>
 
+            {/* Next Button */}
             <button
               onClick={() =>
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
               disabled={currentPage === totalPages}
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white backdrop-blur-md hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white text-sm sm:text-base backdrop-blur-md hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
-              Next
+              <span className="hidden xs:inline">Next</span>
               <ChevronRight size={16} />
             </button>
           </div>

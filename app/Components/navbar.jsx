@@ -52,7 +52,7 @@ export default function Navbar() {
       } w-full bg-gradient-to-br from-[#0f2027] via-[#203a43]  to-[#2c5364] backdrop-blur-lg z-50 transition-all duration-300`}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 md:px-0 px-4">
           <div className="flex items-center">
             <Link
               href="/"
@@ -114,7 +114,7 @@ export default function Navbar() {
 
       {/* Mobile menu drawer */}
       <div
-        className={`fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 h-screen ${
+        className={`fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 h-screen  ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}

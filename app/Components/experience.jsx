@@ -52,16 +52,16 @@ const ExperienceCard = ({
         }`}
     >
       {/* Date in Top Right */}
-      <div className="absolute top-5 right-6 text-sm sm:text-base font-medium">
+      <div className="absolute md:top-5 right-6 top-2 text-sm sm:text-base font-medium">
         <span className={isPrimaryCard ? "text-gray-700" : "text-white/80"}>
           {date}
         </span>
       </div>
 
       {/* Icon + Role */}
-      <div className="flex items-center gap-4 mb-4">
+      <div className="flex items-center md:gap-4 gap-2 mb-4 mt-2 lg:mt-0">
         <div
-          className={`p-3 rounded-xl backdrop-blur-md 
+          className={`md:p-3 p-2 rounded-xl backdrop-blur-md 
             ${
               isPrimaryCard
                 ? "shadow-lg bg-[rgba(32,58,67,0.9)]"
@@ -71,7 +71,7 @@ const ExperienceCard = ({
           {getIcon()}
         </div>
         <h3
-          className={`text-xl sm:text-2xl font-semibold tracking-wide ${
+          className={`text-lg sm:text-2xl font-semibold tracking-wide ${
             isPrimaryCard ? "text-black" : "text-white"
           }`}
         >
